@@ -18,6 +18,9 @@ export default function Login() {
   const handleLogin = (event) => {
     event.preventDefault();
     const loginWasSuccessful = auth.login(formState.email, formState.password);
+    loginWasSuccessful
+      ? history.replace(from.pathname)
+      : setError('Login Failed');
 
     // TODO: If login was unsuccessful, set an error with a message
     // to display to the user that their login failed.
@@ -37,12 +40,16 @@ export default function Login() {
           id="email"
           name="email"
           type="email"
+          onChange={handleFormChange}
+          aria-label="Email"
         />{' '}
         <label>Password</label>
         <input
           id="password"
           name="password"
           type="password"
+          onChange={handleFormChange}
+          aria-label="Password"
         />
         <button type="submit" aria-label="Sign In">
           Sign in
