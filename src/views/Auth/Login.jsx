@@ -18,10 +18,9 @@ export default function Login() {
   const handleLogin = (event) => {
     event.preventDefault();
     const loginWasSuccessful = auth.login(formState.email, formState.password);
-
-    setError('Login Failed');
-
-    history.replace(from.pathname);
+    loginWasSuccessful
+      ? history.replace(from.pathname)
+      : setError('Login Failed');
 
     // TODO: If login was unsuccessful, set an error with a message
     // to display to the user that their login failed.
