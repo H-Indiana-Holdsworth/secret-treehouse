@@ -50,7 +50,7 @@ export default function Login() {
           name="password"
           type="password"
           onChange={handleFormChange}
-          aria-label="Email"
+          aria-label="Password"
         />
         <button type="submit" aria-label="Sign In">
           Sign in

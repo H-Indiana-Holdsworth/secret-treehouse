@@ -23,7 +23,7 @@ exports[`should allow the user to log in 1`] = `
       Password
     </label>
     <input
-      aria-label="Email"
+      aria-label="Password"
       id="password"
       name="password"
       type="password"
